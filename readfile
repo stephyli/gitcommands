@@ -1,0 +1,18 @@
+function readFile(file, size){
+    
+    var fs = require('fs');
+ 
+fs.readFile(file, 'utf8', function(err, contents) {
+    var arrayName = contents.split('\n');
+    
+    for(var i=0; i<=size; i++){
+    var arrayIndex = Math.floor(Math.random() * arrayName.length) + 1;
+     console.log(i+arrayName[arrayIndex]);   
+    }
+    
+});
+ 
+console.log('after calling readFile');
+}
+readFile('../randomdata/male.txt', 5);
+readFile('../randomdata/female.txt', 5);
